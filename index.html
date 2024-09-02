@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <title>CryptoHunt</title>
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="generic-cryptocurrency-icon-2048x2048-8uz1hlry.png"
+  />
+  <body>
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+    </div>
+    <div class="wrapper">
+      <header class="header">
+        <a href="#" class="logo" style="color: rgb(20, 225, 81)">CryptoHunt</a>
+
+        <nav class="navbar">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#trade">Trade</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#signin" id="show-login">Sign In</a>
+        </nav>
+      </header>
+      <hr style="width: 90%; color: #ffffff; margin: auto" />
+
+      <div class="preview-div">
+        <h1>
+          Welcome to <span style="color: rgb(20, 225, 81)">CryptoHunt </span
+          ><img
+            src="generic-cryptocurrency-icon-2048x2048-8uz1hlry.png"
+            height="50px"
+          />
+        </h1>
+        <button class="trade-btn" id="start-trade">Start Trading</button>
+      </div>
+      <div class="list-div">
+        <div class="controls">
+          <input
+            type="text"
+            id="search-box"
+            placeholder="Search for a coin..."
+            onkeyup="filterTable()"
+            autocomplete="off" 
+          />
+          <select id="currency-select" onchange="fetchCryptoData()">
+            <option value="usd" selected>USD</option>
+            <option value="eur">EUR</option>
+            <option value="gbp">GBP</option>
+            <option value="inr">INR</option>
+          </select>
+        </div>
+
+        <table class="crypto-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Coin</th>
+              <th>Price</th>
+              <th>Price Change in 24H</th>
+            </tr>
+          </thead>
+
+          <tbody></tbody>
+        </table>
+        <div class="pagination-controls">
+          <button id="prev-btn" onclick="changePage(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button id="next-btn" onclick="changePage(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+      <div class="signin-popup">
+        <div class="close-btn">&times;</div>
+        <div class="signin-form">
+          <h2>Login</h2>
+          <div class="form-element">
+            <label for="email-id">Email</label><br />
+            <input type="text" id="email" placeholder="Enter your email" />
+          </div>
+          <div class="form-element">
+            <label for="password">Password</label><br />
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <!-- <div class="form-element">
+          <input type="checkbox" id="remember-me">
+          <label for="remember-me">Remember me</label>
+        </div> -->
+          <div class="form-element">
+            <button>Sign in</button>
+          </div>
+          <div class="form-element">
+            <a href="#">Forgot Password?</a>
+          </div>
+        </div>
+      </div>
+    
+
+    <script src="script.js"></script>
+    <script
+      src="
+https://kit.fontawesome.com/b1ca2c1976.js
+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
